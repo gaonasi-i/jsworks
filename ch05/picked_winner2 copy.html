@@ -26,35 +26,36 @@
     <section>
         <h2>당첨자 발표</h2>
     </section>
+    
     <script>
-       let member = parseInt(prompt("전체 응모자 수 : "));
-       let num = parseInt(prompt("당첨자 수 : "));
-
-
-        if(member == null || num == null
-        || isNaN(member) || isNaN(num)){
+        let member = parseInt(prompt("전체 응모자 수 : "));
+        let num = parseInt(prompt("당첨자 수 : "));
+    
+        if (member == null || num == null || isNaN(member) || isNaN(num)) {
             document.write("<p>입력이 취소되었습니다.</p>");
-        }
-        else{
-            let winner = new Array(num); 
+        } else {
+            let winner = new Array(num);
             document.write("<p>전체 응모자 수 : " + member + "명</p>");
             document.write("<p>당첨자 : ");
-            
-                for(let i=0; i<num; i++){
-                    let pickeOne = Math.floor(Math.random()* member) + 1;
-                    winner[i] = pickeOne; // 당첨된 1개 번호를 배열에 저장
-                
-                for(let j=0; j<i; j++);{
-                    if(winner[j] == winner[i]){i--; break;}
+    
+            for (let i = 0; i < num; i++) {
+                let pickedOne = Math.floor(Math.random() * member) + 1;
+                winner[i] = pickedOne;
+    
+                for (let j = 0; j < i; j++) {
+                    if (winner[j] == winner[i]) {
+                        i--;
+                        break;
                     }
                 }
-            
-            for(let i=0; i<num; i++){
+            }
+    
+            for (let i = 0; i < num; i++) {
                 document.write(winner[i] + " ");
             }
-            
-            document.write("<br>");
-            }
+    
+            document.write("</p>");
+        }
     </script>
 </body>
 </html>
