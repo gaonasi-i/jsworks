@@ -23,9 +23,9 @@
             // <li>water</li>
 
             //만든것(water)을 ul안에 포함시키키
-            let list = document.getElementById("myList");
+            let list = document.getElementById("myList").appendChild(newLi);
             //list.appendChild(newLi); //맨아래에 추가
-            list.insertBefore(newLi, list.childNodes[2]); //특정위치에 추가할수 있음 (2번 인덱스 앞에 추가)
+            //list.insertBefore(newLi, list.childNodes[2]); //특정위치에 추가할수 있음 (2번 인덱스 앞에 추가)
         }
     </script>
 </body>
